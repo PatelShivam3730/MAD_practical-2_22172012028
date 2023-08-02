@@ -23,11 +23,20 @@ class MainActivity : AppCompatActivity()
     }
 
     override fun onStart() {
-        super.onStart()
+            super.onStart()
         showMassage("onstart method is called")
     }
 
     override fun onResume() {
         super.onResume()
+    }
+    override fun onStart() {
+        super.onStart()
+        showMassage("onstart method is called")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        showMassage("onstart method is called")
     }
 }
