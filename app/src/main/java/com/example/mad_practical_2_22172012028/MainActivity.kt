@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity()
 {
@@ -20,23 +22,33 @@ class MainActivity : AppCompatActivity()
     {
         Log.i(TAG, massage)
         Toast.makeText(this, massage , Toast.LENGTH_SHORT).show()
+        val obj:ConstraintLayout?=findViewById(R.id.mainConstraint)
+        if (obj!=null)
+        {
+            Snackbar.make(obj,massage,Snackbar.LENGTH_SHORT)
+        }
     }
 
     override fun onStart() {
             super.onStart()
-        showMassage("onstart method is called")
+        showMassage("onStart method is called")
     }
 
     override fun onResume() {
         super.onResume()
     }
-    override fun onStart() {
-        super.onStart()
-        showMassage("onstart method is called")
+    override fun onPause() {
+        super.onPause()
+        showMassage("onPause method is called")
     }
 
-    override fun onStart() {
-        super.onStart()
-        showMassage("onstart method is called")
+    override fun onStop() {
+        super.onStop()
+        showMassage("onStop method is called")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        showMassage("onRestart method is called")
     }
 }
